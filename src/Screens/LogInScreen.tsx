@@ -26,7 +26,6 @@ const LogInScreen = (props: ILogInScreen) => {
 	}
 
 	const handleLoginPress = () => {
-		// Compare
 		if (userNameInput == hardCodedUserName && passwordInput == hardCodedPassword) {
 			Alert.alert("Success🥳", "You're in the HomeScreen")
 			props.setWhichScreen("homeScreen")

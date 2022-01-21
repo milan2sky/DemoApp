@@ -13,15 +13,11 @@ const LogInCTA = (props: ILogInCTA) => {
 					props.onPress()
 				}
 			}}
-			onLongPress={()=> {
-				Alert.alert("Login-Hint!", "You probably lost your password or username😉\n\nusername:joe\npassword:1234")
-			}}
+			onLongPress={()=> Alert.alert("Login-Hint!", "You probably lost your password or username😉\n\nusername:joe\npassword:1234")}
 			style={({ pressed }) => [styles.CTAButton, pressed && {
 				opacity: !props.canLogInCTAbePressed ? 0.9 : 1,
 				transform: !props.canLogInCTAbePressed ? [{ scale: .94 }] : []
-			}, !props.canLogInCTAbePressed && {
-				backgroundColor: "#00c1fc",
-			}]}>
+			}, !props.canLogInCTAbePressed && { backgroundColor: "#00c1fc", }]}>
 			<Text style={[styles.CTAButtonText, 
 			// !props.canLogInCTAbePressed && {color: "white"}
 			]}>login</Text>
