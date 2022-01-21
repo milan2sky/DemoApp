@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import React from 'react'
+import { StyleSheet, TextInput, View } from 'react-native'
 
 interface IInputField {
 	inputType: "username" | "password",
@@ -7,18 +7,10 @@ interface IInputField {
 }
 
 const InputField = (props: IInputField) => {
-	const [isThisInputFieldToggled, setIsThisInputFieldToggled] = useState(false)
-	// const [textInputValue, setTextInputValue] = useState("")
 
 	return (
-		<View style={[styles.container,
-		isThisInputFieldToggled && {
-			borderColor: "#61baf9",
-			borderWidth: 3
-		}
-		]}>
+		<View style={styles.container}>
 			<TextInput
-				onFocus={({ nativeEvent }) => console.log(nativeEvent.target)}
 				style={styles.textInput}
 				placeholder={"Enter your " + props.inputType}
 				textContentType={props.inputType != "password" ? "username" : "password"}
@@ -38,6 +30,7 @@ const styles = StyleSheet.create({
 	},
 	textInput: {
 		width: "70%",
+		fontSize: 18,
 		marginHorizontal: 10,
 	}
 })

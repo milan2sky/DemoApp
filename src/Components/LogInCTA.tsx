@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, StyleSheet, Text } from 'react-native'
+import { Alert, Pressable, StyleSheet, Text } from 'react-native'
 
 interface ILogInCTA {
 	onPress: () => void,
@@ -13,6 +13,9 @@ const LogInCTA = (props: ILogInCTA) => {
 					props.onPress()
 				}
 			}}
+			onLongPress={()=> {
+				Alert.alert("Login-Hint!", "You probably lost your password or username😉\n\nusername:joe\npassword:1234")
+			}}
 			style={({ pressed }) => [styles.CTAButton, pressed && {
 				opacity: !props.canLogInCTAbePressed ? 0.9 : 1,
 				transform: !props.canLogInCTAbePressed ? [{ scale: .94 }] : []
@@ -21,7 +24,7 @@ const LogInCTA = (props: ILogInCTA) => {
 			}]}>
 			<Text style={[styles.CTAButtonText, 
 			// !props.canLogInCTAbePressed && {color: "white"}
-			]}>Login</Text>
+			]}>login</Text>
 		</Pressable>
 	)
 }

@@ -12,6 +12,7 @@ const HeartButton = (
 		<Pressable
 			onPress={() => setIsLike(!isLike)}
 			style={{paddingRight: 12,}}
+			hitSlop={15}
 			children={({ pressed }) => (
 				<AntDesign
 					style={[isLike ? styles.heartIsLike : styles.heartIsNoLike, pressed && {
@@ -29,10 +30,10 @@ export default HeartButton
 const styles = StyleSheet.create({
 	heartIsLike: {
 		color: "red",
-		fontSize: 21,
-		transform: [{ scale: 1.24 }]
+		fontSize: 34,
+		transform: [{ scale: 1.1 }]
 	},
 	heartIsNoLike: {
-		fontSize: 21
+		fontSize: 34
 	}
 })

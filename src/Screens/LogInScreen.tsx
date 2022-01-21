@@ -27,7 +27,7 @@ const LogInScreen = (props: ILogInScreen) => {
 
 	const handleLoginPress = () => {
 		// Compare
-		if (userNameInput == hardCodedUserName || passwordInput == hardCodedPassword) {
+		if (userNameInput == hardCodedUserName && passwordInput == hardCodedPassword) {
 			Alert.alert("Success🥳", "You're in the HomeScreen")
 			props.setWhichScreen("homeScreen")
 		} else {
@@ -46,7 +46,6 @@ const LogInScreen = (props: ILogInScreen) => {
 					<Text style={styles.tryAgainText}>Try again! UserName or password was not correct!</Text>
 				</View>
 			)}
-			<Text style={{position: "absolute"}}>This demo app was made by Milan Mikule</Text>
 		</ImageBackground>
 	)
 }
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "rgba(255,255,255,.7)",
 		marginTop: 6,
 		padding: 6,
-		borderRadius: 14
+		borderRadius: 14,
 	},
 	tryAgainText: {
 		color: "red",
