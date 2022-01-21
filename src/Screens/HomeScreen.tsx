@@ -27,7 +27,7 @@ const HomeScreen = (props: {
 							<Text style={styles.endText}>…You've reached the End…</Text>
 							<Text style={{ color: "#002f56", fontWeight: "600" }}>This demo-app was made by Milan Mikule</Text>
 						</View>
-						<Button title='…go to LogIn' onPress={() => { Alert.alert("logout 👋"); props.setWhichScreen("loginScreen") }} />
+						<Button title='logout' onPress={() => { Alert.alert("logout 👋"); props.setWhichScreen("loginScreen") }} />
 					</>
 				)}
 			/>

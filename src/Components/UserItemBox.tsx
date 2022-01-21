@@ -3,22 +3,17 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import { IUserData } from '../Data/userData'
 import HeartButton from './HeartButton'
 
+
+const profilePicSize = 64
+const spaceBS = 16
 interface IUserItemBox extends IUserData {
 	index: number
 }
 
-const profilePicSize = 64
-const spaceBS = 16
-
-// This Answer helped me a lot: https://stackoverflow.com/a/64094755
-const imageBasicURI = "https://source.unsplash.com/random/" + profilePicSize + "x" + profilePicSize
-
 const UserItemBox = ({ userName, profilePicUrl, index }: IUserItemBox) => {
-	const imgURI = { uri: imageBasicURI + "?sig" + index.toString() }
-	// console.log("This: " + index.toString())
 	return (
 		<View style={styles.container}>
-			<Image source={{uri: imageBasicURI + "?sig" + index.toString(), cache: "reload"}} style={[{
+			<Image source={{uri: profilePicUrl, height: profilePicSize, width: profilePicSize}} style={[{
 				width: profilePicSize,
 				height: profilePicSize,
 				borderRadius: profilePicSize
